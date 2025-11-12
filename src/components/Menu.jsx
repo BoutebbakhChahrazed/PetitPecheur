@@ -1,7 +1,7 @@
 import React from 'react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { ImageWithFallback } from '../assets/images/ImageWithFallback';
 
-const Menu = () => {
+const Menu = ({ onNavigate }) => {
   const menuItems = [
     {
       id: 1,
@@ -25,8 +25,8 @@ const Menu = () => {
       description: "Fresh pasta with shrimp, scallops, and clams in a white wine sauce",
       price: "$26",
       category: "Main",
-      image: "https://images.unsplash.com/photo-1621996346565-e3dbc353d2e5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=708&q=80"
-    },
+      image: "https://plus.unsplash.com/premium_photo-1668146927669-f2edf6e86f6f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470"
+   },
     {
       id: 4,
       name: "Chocolate Fondant",
@@ -83,7 +83,10 @@ const Menu = () => {
         </div>
         
         <div className="text-center mt-20">
-          <button className="px-10 py-4 border border-secondary text-secondary tracking-widest uppercase text-sm transition-all duration-300 hover:bg-secondary hover:text-background">
+          <button 
+            onClick={() => onNavigate?.('menu')}
+            className="px-10 py-4 border border-secondary text-secondary tracking-widest uppercase text-sm transition-all duration-300 hover:bg-secondary hover:text-background"
+          >
             View Full Menu
           </button>
         </div>

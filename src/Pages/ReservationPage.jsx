@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ImageWithFallback } from '../Components/ImageWithFallback';
+import { ImageWithFallback } from '../assets/images/ImageWithFallback';
 
 const ReservationPage = ({ onNavigate }) => {
   const [formData, setFormData] = useState({
