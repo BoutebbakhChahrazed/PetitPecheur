@@ -24,7 +24,7 @@ function App() {
       {currentPage === 'home' && <HomePage onNavigate={handleNavigate} />}
       {currentPage === 'menu' && <FullMenuPage onNavigate={handleNavigate} />}
       {currentPage === 'reservation' && <ReservationPage onNavigate={handleNavigate} />}
-      {currentPage === 'contact' && <ContactPage onNavigate={handleNavigate} />}
+      {currentPage === 'contactus' && <ContactPage onNavigate={handleNavigate} />}
       
       <Footer />
     </div>
