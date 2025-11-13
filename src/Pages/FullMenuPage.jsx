@@ -32,8 +32,7 @@ const FullMenuPage = ({ onNavigate }) => {
         description: "Creamy burrata with garden tomatoes, basil oil, and aged balsamic",
         price: "$16",
         dietary: ["vegetarian", "gluten-free"],
-        image: "https://images.unsplash.com/photo-1608897013157-f2a8c0e4b8a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=781&q=80"
-      },
+        image: "https://media.istockphoto.com/id/1312142952/photo/colorful-tomatoes.jpg?s=1024x1024&w=is&k=20&c=GU7vZgndP2Z2QyfdIB9s5p_6-dmnaO4_RHq2DTGrPaI="},
       {
         id: 4,
         name: "Tuna Tartare",
@@ -67,7 +66,7 @@ const FullMenuPage = ({ onNavigate }) => {
         description: "House-made pasta with prawns, scallops, clams in white wine reduction",
         price: "$32",
         dietary: [],
-        image: "https://images.unsplash.com/photo-1621996346565-e3dbc353d2e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=708&q=80"
+        image: "https://plus.unsplash.com/premium_photo-1668146927669-f2edf6e86f6f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470"
       },
       {
         id: 8,
@@ -76,8 +75,8 @@ const FullMenuPage = ({ onNavigate }) => {
         price: "$42",
         dietary: ["gluten-free"],
         chefSpecial: true,
-        image: "https://images.unsplash.com/photo-1580959375944-c1e8b0e9d2f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=781&q=80"
-      },
+        image: "https://images.unsplash.com/photo-1720787066773-3e2dbd9225f2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+       },
       {
         id: 9,
         name: "Duck Confit",
@@ -92,8 +91,7 @@ const FullMenuPage = ({ onNavigate }) => {
         description: "Creamy arborio rice with wild mushrooms, truffle oil, and pecorino",
         price: "$28",
         dietary: ["vegetarian", "gluten-free"],
-        image: "https://images.unsplash.com/photo-1476124369491-f1a4598c8a14?ixlib=rb-4.0.3&auto=format&fit=crop&w=781&q=80"
-      },
+        image: "https://plus.unsplash.com/premium_photo-1694850980331-fd0dd7f6617b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
       {
         id: 11,
         name: "Rack of Lamb",
@@ -139,44 +137,13 @@ const FullMenuPage = ({ onNavigate }) => {
         image: "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixlib=rb-4.0.3&auto=format&fit=crop&w=781&q=80"
       }
     ],
-    beverages: [
-      {
-        id: 16,
-        name: "House Red Wine",
-        description: "Bordeaux blend selected by our sommelier",
-        price: "$12/glass",
-        image: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=781&q=80"
-      },
-      {
-        id: 17,
-        name: "House White Wine",
-        description: "Crisp Sancerre from Loire Valley",
-        price: "$11/glass",
-        image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=781&q=80"
-      },
-      {
-        id: 18,
-        name: "Champagne",
-        description: "Moët & Chandon Brut Impérial",
-        price: "$85/bottle",
-        chefSpecial: true,
-        image: "https://images.unsplash.com/photo-1547595628-c61a29f496f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=781&q=80"
-      },
-      {
-        id: 19,
-        name: "Craft Cocktails",
-        description: "Ask your server for our seasonal cocktail menu",
-        price: "$14-18",
-        image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=781&q=80"
-      }
-    ]
+   
   };
 
   const allItems = [
     ...fullMenu.appetizers,
     ...fullMenu.mains,
-    ...fullMenu.desserts,
-    ...fullMenu.beverages
+    ...fullMenu.desserts
   ];
 
   const filteredItems = searchQuery
@@ -191,13 +158,13 @@ const FullMenuPage = ({ onNavigate }) => {
       {items.map((item) => (
         <div
           key={item.id}
-          className="group bg-card border border-border hover:border-primary/50 transition-all duration-300 overflow-hidden hover:shadow-xl"
+          className="group bg-card hover:border-primary/50 transition-all duration-300 overflow-hidden hover:shadow-xl rounded-lg"
         >
-          <div className="relative overflow-hidden aspect-[4/3]">
+          <div className="relative overflow-hidden  aspect-[3/4] ">
             <ImageWithFallback
               src={item.image}
               alt={item.name}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 mb-5"
             />
             {item.chefSpecial && (
               <div className="absolute top-4 right-4">
@@ -205,8 +172,8 @@ const FullMenuPage = ({ onNavigate }) => {
               </div>
             )}
           </div>
-          <div className="p-6">
-            <div className="flex justify-between items-start mb-3">
+          <div className="p-12">
+            <div className="flex justify-between items-start ">
               <h3 className="text-lg tracking-wide group-hover:text-primary transition-colors">
                 {item.name}
               </h3>
@@ -234,7 +201,7 @@ const FullMenuPage = ({ onNavigate }) => {
 
   return (
     <div className="min-h-screen bg-background pt-24">
-      {/* Hero Section */}
+      
       <section className="relative py-20 lg:py-32 bg-secondary overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <ImageWithFallback
@@ -260,30 +227,35 @@ const FullMenuPage = ({ onNavigate }) => {
       </section>
 
       {/* Search Bar */}
-      <section className="py-12 bg-muted border-b border-border">
+      <section className="py-16 bg-gradient-to-b from-muted to-background">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-2xl mx-auto">
-            <div className="relative">
-              <svg
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-8">
+              <p className="text-primary text-sm tracking-[0.3em] uppercase mb-2">Find Your Dish</p>
+              <h2 className="text-2xl md:text-3xl">Search Our Menu</h2>
+            </div>
+            <div className="relative group ">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative bg-background p-[100px]  w-[100px] m-0 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:border-primary/50 ">
+               
+                <Input
+                  type="text"
+                  placeholder="Search dishes, ingredients, or descriptions..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="p-[12px] bg-transparent border-0 focus:ring-0 focus:outline-none text-base rounded-full"
                 />
-              </svg>
-              <Input
-                type="text"
-                placeholder="Search our menu..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-12 py-6 bg-background border-border focus:border-primary"
-              />
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery('')}
+                    className="absolute  top-1/2 -translate-y-1/2 text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -308,23 +280,35 @@ const FullMenuPage = ({ onNavigate }) => {
             </div>
           ) : (
             <Tabs defaultValue="all" className="w-full">
-              <TabsList className="grid w-full max-w-3xl mx-auto grid-cols-5 mb-16 bg-muted p-2">
-                <TabsTrigger value="all" className="data-[state=active]:bg-primary data-[state=active]:text-secondary">
-                  All
-                </TabsTrigger>
-                <TabsTrigger value="appetizers" className="data-[state=active]:bg-primary data-[state=active]:text-secondary">
-                  Appetizers
-                </TabsTrigger>
-                <TabsTrigger value="mains" className="data-[state=active]:bg-primary data-[state=active]:text-secondary">
-                  Mains
-                </TabsTrigger>
-                <TabsTrigger value="desserts" className="data-[state=active]:bg-primary data-[state=active]:text-secondary">
-                  Desserts
-                </TabsTrigger>
-                <TabsTrigger value="beverages" className="data-[state=active]:bg-primary data-[state=active]:text-secondary">
-                  Beverages
-                </TabsTrigger>
-              </TabsList>
+              <div className="flex justify-center mb-16">
+                <TabsList className="inline-flex bg-muted/50 backdrop-blur-sm rounded-full p-2 gap-8 shadow-lg">
+                  <TabsTrigger 
+                    value="all" 
+                    className="rounded-full px-8 py-3 data-[state=active]:bg-primary data-[state=active]:text-secondary data-[state=active]:shadow-md transition-all duration-300 text-sm tracking-wider uppercase "
+                  >
+                    All
+                  </TabsTrigger>
+                  <TabsTrigger 
+                    value="appetizers" 
+                    className="rounded-full px-8 py-3 data-[state=active]:bg-primary data-[state=active]:text-secondary data-[state=active]:shadow-md transition-all duration-300 text-sm tracking-wider uppercase"
+                  >
+                    Appetizers
+                  </TabsTrigger>
+                  <TabsTrigger 
+                    value="mains" 
+                    className="rounded-full px-8 py-3 data-[state=active]:bg-primary data-[state=active]:text-secondary data-[state=active]:shadow-md transition-all duration-300 text-sm tracking-wider uppercase"
+                  >
+                    Mains
+                  </TabsTrigger>
+                  <TabsTrigger 
+                    value="desserts" 
+                    className="rounded-full px-8 py-3 data-[state=active]:bg-primary data-[state=active]:text-secondary data-[state=active]:shadow-md transition-all duration-300 text-sm tracking-wider uppercase"
+                  >
+                    Desserts
+                  </TabsTrigger>
+                 
+                </TabsList>
+              </div>
 
               <TabsContent value="all" className="space-y-20">
                 <div>
@@ -339,10 +323,7 @@ const FullMenuPage = ({ onNavigate }) => {
                   <h2 className="text-3xl md:text-4xl mb-8">Desserts</h2>
                   {renderMenuItems(fullMenu.desserts)}
                 </div>
-                <div>
-                  <h2 className="text-3xl md:text-4xl mb-8">Beverages</h2>
-                  {renderMenuItems(fullMenu.beverages)}
-                </div>
+                
               </TabsContent>
 
               <TabsContent value="appetizers">
@@ -360,10 +341,7 @@ const FullMenuPage = ({ onNavigate }) => {
                 {renderMenuItems(fullMenu.desserts)}
               </TabsContent>
 
-              <TabsContent value="beverages">
-                <h2 className="text-3xl md:text-4xl mb-8">Beverages</h2>
-                {renderMenuItems(fullMenu.beverages)}
-              </TabsContent>
+             
             </Tabs>
           )}
         </div>
