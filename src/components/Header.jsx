@@ -60,6 +60,13 @@ const Header = ({ onNavigate, currentPage }) => {
               About
               <span className="absolute bottom-0 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full"></span>
             </button>
+             <button 
+              onClick={() => handleNavClick('contactus')}
+              className="text-sm tracking-widest uppercase text-primary transition-colors hover:text-primary relative group"
+            >
+              Contact Us
+              <span className="absolute bottom-0 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </button>
             <button 
               onClick={() => handleNavClick('reservation')}
               className="text-sm tracking-widest uppercase text-primary px-8 py-3 border border-primary text-primary transition-all duration-300 hover:bg-primary hover:text-secondary"
@@ -103,6 +110,12 @@ const Header = ({ onNavigate, currentPage }) => {
               className="block w-full text-left py-3 text-sm tracking-widest uppercase transition-colors hover:text-primary"
             >
               About
+            </button>
+             <button 
+              onClick={() => handleNavClick('contactus')}
+              className="block w-full text-left py-3 text-sm tracking-widest uppercase transition-colors hover:text-primary"
+            >
+              Contact Us
             </button>
             <button 
               onClick={() => handleNavClick('reservation')}
