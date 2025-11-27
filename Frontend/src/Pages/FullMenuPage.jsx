@@ -316,7 +316,7 @@ const FullMenuPage = ({ onNavigate }) => {
                   {renderMenuItems(fullMenu.appetizers)}
                 </div>
                 <div>
-                  <h2 className="text-3xl md:text-4xl mb-8">Main Courses</h2>
+                  <h2 className="text-3xl md:text-4xl mb-8">Main dishes</h2>
                   {renderMenuItems(fullMenu.mains)}
                 </div>
                 <div>
@@ -332,7 +332,7 @@ const FullMenuPage = ({ onNavigate }) => {
               </TabsContent>
 
               <TabsContent value="mains">
-                <h2 className="text-3xl md:text-4xl mb-8">Main Courses</h2>
+                <h2 className="text-3xl md:text-4xl mb-8">Main dishes</h2>
                 {renderMenuItems(fullMenu.mains)}
               </TabsContent>
 
