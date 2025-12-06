@@ -22,16 +22,27 @@ const ContactPage = ({ onNavigate }) => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    setTimeout(() => {
-      alert('Thank you for contacting us! We will get back to you shortly.');
-      setIsSubmitting(false);
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  try {
+    const response = await fetch('http://localhost:8000/api/contacts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
+    if (response.ok) {
+      alert('Thank you! We will get back to you shortly.');
       setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-    }, 1500);
-  };
+    } else {
+      alert('Error submitting form. Please try again.');
+    }
+  } catch (error) {
+    alert('Network error. Please check your connection.');
+  }
+  setIsSubmitting(false);
+};
+
 
   return (
     <div className="min-h-screen bg-background pt-24">
